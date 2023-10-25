@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Pelicula.css";
 import { Link } from "react-router-dom";
+import { favoritosContext } from "../../context/FavoritosContext";
 
-export default function Pelicula({ item }) {
+export default function Pelicula({ item, favorito }) {
+  const { agregarFavorito, eliminarFavorito } = useContext(favoritosContext);
+
   return (
     <div className="card">
       <img className="card-img-top imagen" src={item.Poster} alt={item.Title} />
@@ -13,6 +16,21 @@ export default function Pelicula({ item }) {
         <Link className="btn btn-primary" to={`/pelicula/${item.imdbID}`}>
           Info
         </Link>
+        {favorito ? (
+          <button
+            className="btn btn-success"
+            onClick={() => agregarFavorito(item)}
+          >
+            Favorito
+          </button>
+        ) : (
+          <button
+            className="btn btn-danger"
+            onClick={() => eliminarFavorito(item.imdbID)}
+          >
+            Eliminar
+          </button>
+        )}
       </div>
     </div>
   );
