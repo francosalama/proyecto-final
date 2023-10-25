@@ -5,11 +5,13 @@ import DetallePelicula from "./components/DetallePelicula/DetallePelicula";
 import FavoritosComponent from "./context/FavoritosComponent";
 import ListaFavoritos from "./components/ListaFavoritos/ListaFavoritos";
 import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header.jsx';
 
 function App() {
   return (
     <FavoritosComponent>
       <div className="App">
+        <Header />
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<ListaPeliculas />} />
@@ -22,5 +24,5 @@ function App() {
     </FavoritosComponent>
   );
 }
+export default App
 
-export default App;

@@ -1,0 +1,37 @@
+header {
+    background-color: grey ;
+    color: red; 
+    padding: 10px;
+    text-align: center;
+    height: 200px;
+  }
+
+  h1 {
+    font-size: 25px;
+    text-align: center;
+font-family:Verdana, Geneva, Tahoma, sans-serif
+  }
+  
+  .button {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 10px;
+    border-radius: 5px;
+    display: inline-block;
+  }
+
+  /* Estilo específico para el botón "Buscar Películas" */
+  .search-button {
+    background-color: red;
+  }
+
+  /* Estilo específico para el botón "Favoritas" */
+  .favorites-button {
+    background-color: red;
+  }
+  .logo {
+    height: 100px;
+    float: left;
+}

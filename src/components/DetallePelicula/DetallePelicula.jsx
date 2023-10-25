@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./DetallePelicula.css";
 
+
 export default function DetallePelicula() {
   const apiKey = "1a12885f";
   const { id } = useParams();
