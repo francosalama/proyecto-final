@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import "./DetallePelicula.css";
 
 export default function DetallePelicula() {
   const apiKey = "1a12885f";
@@ -23,11 +24,11 @@ export default function DetallePelicula() {
   }, [id]);
 
   return (
-    <div>
-      <h2>{pelicula.Title}</h2>
-      <h3>{pelicula.Year}</h3>
-      <img src={pelicula.Poster} alt={pelicula.Title} />
-      <p>{pelicula.Plot}</p>
+    <div className="detalles">
+      <h2 className="title">{pelicula.Title}</h2>
+      <h3 className="año">{pelicula.Year}</h3>
+      <img className="peliculaDetalle" src={pelicula.Poster} alt={pelicula.Title} />
+      <p className="texto">{pelicula.Plot}</p>
     </div>
   );
 }

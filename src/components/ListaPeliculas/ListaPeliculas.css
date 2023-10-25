@@ -1,10 +1,35 @@
-.lista{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.lista {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 20px;
 }
-.pelicula{
-    width: 20%;
-    margin-right: 3%;
-    margin-top: 2%;
+
+.pelicula {
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.pelicula:hover {
+  transform: scale(1.05);
+}
+
+.lista > :nth-last-child(-n + 2) {
+  grid-row: 3;
+  grid-column: span 2;
+}
+
+.lista > :nth-last-child(-n + 1) {
+  grid-column: 2;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
 }

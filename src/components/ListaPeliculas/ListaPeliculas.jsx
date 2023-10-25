@@ -45,7 +45,7 @@ export default function ListaPeliculas() {
       <div className="lista">
         {movieList.map((item, index) => (
           <div key={index} className="pelicula">
-            <Pelicula item={item}/>
+            <Pelicula item={item} />
           </div>
         ))}
       </div>
