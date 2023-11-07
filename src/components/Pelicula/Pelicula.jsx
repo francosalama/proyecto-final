@@ -18,14 +18,14 @@ export default function Pelicula({ item, favorito }) {
         </Link>
         {favorito ? (
           <button
-            className="btn btn-success"
+            className="btn btn-success boton"
             onClick={() => agregarFavorito(item)}
           >
-            Favorito
+            Agregar Favorito
           </button>
         ) : (
           <button
-            className="btn btn-danger"
+            className="btn btn-danger boton"
             onClick={() => eliminarFavorito(item.imdbID)}
           >
             Eliminar

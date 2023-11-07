@@ -3,12 +3,6 @@ import './Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
-/* instalar iconos:
-npm install --save @fortawesome/fontawesome-svg-core
-npm install --save @fortawesome/free-brands-svg-icons
-npm install --save @fortawesome/react-fontawesome
-*/
-
 const Footer = () => {
       return (
         <footer className="bg-secondary text-light py-4">
