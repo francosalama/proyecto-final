@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <img src="/logoOrtflix.jpg" alt="Logo de la empresa" className="logo" />
+        <img src="/logo.png" alt="Logo de la empresa" className="logo" />
         <button
           class="navbar-toggler"
           type="button"
