@@ -1,16 +1,30 @@
-.lista{
+.lista {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-.pelicula{
+.pelicula {
   width: 20%;
   margin-right: 3%;
   margin-top: 2%;
 }
 
-.busqueda{
+.busqueda {
   width: 1000px;
   margin-top: 20px;
- margin-left: 50px  ;
+  margin-left: 50px;
+}
+.span {
+  margin-left: 5%;
+  color: white;
+}
+.container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.no-results-message {
+  text-align: center;
+  font-size: 5rem;
+  color: red;
 }

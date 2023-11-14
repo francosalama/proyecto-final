@@ -1,10 +1,24 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./Pelicula.css";
 import { Link } from "react-router-dom";
 import { favoritosContext } from "../../context/FavoritosContext";
 
 export default function Pelicula({ item, favorito }) {
-  const { agregarFavorito, eliminarFavorito } = useContext(favoritosContext);
+  const { agregarFavorito, eliminarFavorito, favoritos } =
+    useContext(favoritosContext);
+
+  // Verificar si la película está en favoritos
+  const esFavorito = favoritos.some(
+    (pelicula) => pelicula.imdbID === item.imdbID
+  );
+
+  const handleAgregarFavorito = () => {
+    agregarFavorito(item);
+  };
+
+  const handleEliminarFavorito = () => {
+    eliminarFavorito(item.imdbID);
+  };
 
   return (
     <div className="card">
@@ -16,19 +30,19 @@ export default function Pelicula({ item, favorito }) {
         <Link className="btn btn-primary" to={`/pelicula/${item.imdbID}`}>
           Info
         </Link>
-        {favorito ? (
-          <button
-            className="btn btn-success boton"
-            onClick={() => agregarFavorito(item)}
+        {esFavorito ? (
+          <i
+            className="fas fa-heart btn btn-success boton"
+            onClick={handleEliminarFavorito}
           >
-            Agregar Favorito
-          </button>
+            Favorito
+          </i>
         ) : (
           <button
             className="btn btn-danger boton"
-            onClick={() => eliminarFavorito(item.imdbID)}
+            onClick={handleAgregarFavorito}
           >
-            Eliminar
+            Agregar Favorito
           </button>
         )}
       </div>

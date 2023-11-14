@@ -7,15 +7,27 @@ export default function ListaPeliculas() {
   const apiKey = "1a12885f";
   const [movieList, setMovieList] = useState([]);
   const [nombreInput, setNombreInput] = useState("");
+  const [noResults, setNoResults] = useState(false);
 
   const callApi = async (pelicula) => {
-    const res = await axios.get("http://www.omdbapi.com", {
-      params: {
-        apiKey: apiKey,
-        s: pelicula,
-      },
-    });
-    setMovieList(res.data.Search);
+    try {
+      const res = await axios.get("http://www.omdbapi.com", {
+        params: {
+          apiKey: apiKey,
+          s: pelicula,
+        },
+      });
+
+      if (res.data.Search) {
+        setMovieList(res.data.Search);
+        setNoResults(false);
+      } else {
+        setMovieList([]);
+        setNoResults(true);
+      }
+    } catch (error) {
+      console.error("Error al realizar la búsqueda:", error);
+    }
   };
 
   const handlePress = (e) => {
@@ -38,16 +50,21 @@ export default function ListaPeliculas() {
     <>
       <input
         value={nombreInput}
-        placeholder="Ingresa la pelicula"
+        placeholder="Ingresa la película"
         onKeyPress={handlePress}
         onChange={handleChange}
         className="busqueda"
       />
-      
+      <span className="span">Presiona enter para buscar la película 🔍</span>
+
+      {noResults && (
+        <p className="no-results-message">No se encontraron películas.</p>
+      )}
+
       <div className="lista">
         {movieList.map((item, index) => (
           <div key={index} className="pelicula">
-            <Pelicula item={item} favorito={true}/>
+            <Pelicula item={item} favorito={true} />
           </div>
         ))}
       </div>
