@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import "./Pelicula.css";
 import { Link } from "react-router-dom";
 import { favoritosContext } from "../../context/FavoritosContext";
@@ -31,15 +31,15 @@ export default function Pelicula({ item, favorito }) {
           Info
         </Link>
         {esFavorito ? (
-          <i
-            className="fas fa-heart btn btn-success boton"
-            onClick={handleEliminarFavorito}
-          >
-            Favorito
-          </i>
-        ) : (
           <button
             className="btn btn-danger boton"
+            onClick={handleEliminarFavorito}
+          >
+            Eliminar Favorito
+          </button>
+        ) : (
+          <button
+            className="btn btn-success boton"
             onClick={handleAgregarFavorito}
           >
             Agregar Favorito
