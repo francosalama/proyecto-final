@@ -7,7 +7,6 @@ export default function ListaPeliculas() {
   const apiKey = "1a12885f";
   const [movieList, setMovieList] = useState([]);
   const [nombreInput, setNombreInput] = useState("");
-  const [noResults, setNoResults] = useState(false);
 
   const callApi = async (pelicula) => {
     try {
@@ -20,10 +19,8 @@ export default function ListaPeliculas() {
 
       if (res.data.Search) {
         setMovieList(res.data.Search);
-        setNoResults(false);
       } else {
         setMovieList([]);
-        setNoResults(true);
       }
     } catch (error) {
       console.error("Error al realizar la búsqueda:", error);
@@ -57,7 +54,7 @@ export default function ListaPeliculas() {
       />
       <span className="span">Presiona enter para buscar la película 🔍</span>
 
-      {noResults && (
+      {movieList.length === 0 && (
         <p className="no-results-message">No se encontraron películas.</p>
       )}
 
