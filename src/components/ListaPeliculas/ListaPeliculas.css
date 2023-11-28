@@ -24,6 +24,7 @@
 }
 
 .no-results-message {
+  margin-top: 400px;
   text-align: center;
   font-size: 5rem;
   color: red;

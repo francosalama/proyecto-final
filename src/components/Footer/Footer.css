@@ -1,21 +1,25 @@
+.footerPelis {
+  margin-top: 700px;
+}
+
 .social-icons {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .social-icons li {
-    display: inline;
-    margin-right: 10px;
-  }
-  
-  .social-icons a {
-    text-decoration: none;
-    color: #fff;
-    background-color: #007bff;
-    padding: 10px;
-    border-radius: 50%;
-  }
-  
-  .social-icons a:hover {
-    background-color: #0056b3;
-  }
+  list-style: none;
+  padding: 0;
+}
+
+.social-icons li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.social-icons a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #007bff;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.social-icons a:hover {
+  background-color: #0056b3;
+}
