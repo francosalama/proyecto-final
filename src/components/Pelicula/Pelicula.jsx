@@ -3,7 +3,7 @@ import "./Pelicula.css";
 import { Link } from "react-router-dom";
 import { favoritosContext } from "../../context/FavoritosContext";
 
-export default function Pelicula({ item, favorito }) {
+export default function Pelicula({ item }) {
   const { agregarFavorito, eliminarFavorito, favoritos } =
     useContext(favoritosContext);
 
